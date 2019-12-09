@@ -6,6 +6,7 @@
 
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" media="all" type="text/css" href="http://chase-childers-assets.s3.amazonaws.com/styles/welcome.scss" data-turbolinks-track="reload">
  </head>
 
   <body style="margin: 0px 0px">
@@ -19,7 +20,9 @@
 
     {% with "sections/"|add:section.type|add:".html" as template %}
     {% if template|template_exists  %}
+    <div class="section_body">
     {% include template %}
+    </div>
     {% endif %}
     {% endwith %} 
     {% endfor %}

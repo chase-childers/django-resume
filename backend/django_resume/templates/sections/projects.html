@@ -1,0 +1,20 @@
+<div class="projects">
+{% for project in section.projects %}
+<div class="project-card">
+<h2>{{ project.title }}</h2>
+{% if project.urls %}
+<div class="project_urls">
+{% for url_info in project.urls %}
+<a href="{{ url_info.link }}" class="link-icon"><i class="fa fa-{{ url_info.icon }}"></i></a>
+{% endfor %}
+</div>
+{% endif %}
+<p>{{ project.description }}</p>
+<ul class="project_technologies">
+{% for tech in project.technologies %}
+<li>{{ tech }}</li>
+{% endfor %}
+</ul>
+</div>
+{% endfor %}
+</div>

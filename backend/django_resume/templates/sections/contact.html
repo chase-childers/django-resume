@@ -1,0 +1,13 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div id="contact_pos">
+<h1>
+{{ section.statement }}
+</h1>
+</div>
+{% if section.contact %} 
+<div class="contact" id="contact_bar"> 
+  {% for contact in section.contact %}
+    <a href="{{ contact.link }}" class="{{ contact.icon }}"><i class="fa fa-{{ contact.icon }}"></i></a>
+  {% endfor %}
+</div>  
+{% endif %}
