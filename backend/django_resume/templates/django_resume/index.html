@@ -1,0 +1,27 @@
+{% load section_tags %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chase Childers</title>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+ </head>
+
+  <body style="margin: 0px 0px">
+    {% for section in resume_data.sections %}
+
+    <div class="section"  {% if section.asset %}style="background-image: url({{ section.asset}});{% if forloop.counter0 == 0 %}height: 1000px;{% endif %}"{% endif %}>
+        <div class="section_header">
+            <span class="border">{{ forloop.counter0 }}{{ section.title }}</span>
+        </div>
+    </div>
+
+    {% with "sections/"|add:section.type|add:".html" as template %}
+    {% if template|template_exists  %}
+    {% include template %}
+    {% endif %}
+    {% endwith %} 
+    {% endfor %}
+  </body>
+</html>
