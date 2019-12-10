@@ -1,0 +1,13 @@
+<div class="experience">
+{% if section.profile %}<img src="{{ section.profile }}">{% endif %}
+<div class="experience_container">
+<p>
+{{ section.statement }}
+</p>
+<ul class="experience_list" style="display:none">
+{% for experience in section.experience %}
+<li>{{ experience }} </li>
+{% endfor %}
+</ul>
+</div>
+</div>

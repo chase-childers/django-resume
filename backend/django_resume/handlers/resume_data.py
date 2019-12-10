@@ -28,7 +28,7 @@ class ResumeData(metaclass=Singleton):
         if time.time() < self.next_pull and self.resume_data != None:
             return self.resume_data
         if self.resume_data == None and time.time() > self.next_pull:
-            resp = self.s3.get_object(Bucket='rails-resume', Key='resume_data_staging_public.yml')
+            resp = self.s3.get_object(Bucket='rails-resume', Key='resume_data_staging.yml')
             data = yaml.load(resp['Body'])
             self.resume_data = data
             self.next_pull = time.time() + self.poll_rate

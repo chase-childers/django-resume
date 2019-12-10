@@ -1,12 +1,15 @@
 {% load section_tags %}
 <!DOCTYPE html>
+<!-- Powered by Django -->
 <html>
   <head>
     <title>Chase Childers</title>
 
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
- </head>
+    <link rel="stylesheet" media="all" type="text/css" href="https://chase-childers.s3.amazonaws.com/assets/welcome.css" data-turbolinks-track="reload">
+    <script src="https://chase-childers.s3.us-east-2.amazonaws.com/assets/application.js" data-turbolinks-track="reload"></script>
+  </head>
 
   <body style="margin: 0px 0px">
     {% for section in resume_data.sections %}
@@ -19,7 +22,9 @@
 
     {% with "sections/"|add:section.type|add:".html" as template %}
     {% if template|template_exists  %}
+    <div class="section_body">
     {% include template %}
+    </div>
     {% endif %}
     {% endwith %} 
     {% endfor %}

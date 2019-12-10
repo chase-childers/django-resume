@@ -1,0 +1,23 @@
+<div class="jobs_section">
+
+{% for job in section.jobs %}
+    <div class="tabcontent" id="{{ job.company }}" style="display:block">
+    <div class="jobheader">
+    {% if job.asset %}<img src="{{ job.asset }}">{% endif %}
+    <h2>{{ job.company }}</h2>
+    <p>{{ job.time }}</p>
+    </div>
+    {% for pos in job.positions %}
+        <div class="positions">
+            <h3>{{ pos.team }}</h3>
+            <p>{{ pos.title }}</p>
+            <ul class="points">
+            {% for point in pos.points %}
+                <li>{{ point }}</li>
+            {% endfor %}
+            </ul>
+        </div>
+    {% endfor %}    
+    </div>
+{% endfor %}
+</div>
