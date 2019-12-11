@@ -10,6 +10,7 @@ pylint = "*"
 django = "*"
 boto3 = "*"
 pyyaml = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.5"
