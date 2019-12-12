@@ -124,3 +124,5 @@ dmypy.json
 # Ignore Secret File
 *secret_key*
 
+# VS Code
+.vscode/*

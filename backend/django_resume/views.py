@@ -7,3 +7,6 @@ def index(request):
     data = ResumeData().get_resume_data()
     context = {'resume_data': data}
     return render(request, 'django_resume/index.html', context)
+
+def health(request):
+    return HttpResponse('OK')
